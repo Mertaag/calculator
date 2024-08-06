@@ -27,11 +27,17 @@ body {
     flex: 1;
 }
 
-#input {
+
+
+#current-value, #last-value {
     color: white;
     width: 100%;
     text-align: end;
     font-size: 24px;
+}
+
+#last-value {
+    font-size: 16px;
 }
 
 table {
@@ -40,6 +46,10 @@ table {
     margin-right: auto;
     width: 100%;
     flex: 9;
+}
+
+td {
+    width: 25%;
 }
 
 input[type="button"] {

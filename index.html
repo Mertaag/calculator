@@ -12,14 +12,15 @@
 <body>
     <div class="container">
         <div class="display">
-            <p id="input">0</p>
+            <p id="last-value"></p>
+            <p id="current-value">0</p>
         </div>
-    <table cellspacing = class="buttons">
+    <table class="buttons">
         <tr>
-            <td><input type="button" class="ops-button" value="CE"></td>
-            <td><input type="button" class="ops-button"value="C"></td>
-            <td><input type="button" class="ops-button"value="⌫"></td>
-            <td><input type="button" class="ops-button"value="/"></td>
+            <td><input type="button" class="ops-button" value=""></td>
+            <td><input type="button" class="ops-button" id="clear" value="C"></td>
+            <td><input type="button" class="ops-button" id="delete" value="⌫"></td>
+            <td><input type="button" class="ops-button" value="/"></td>
         </tr>
         <tr>
             <td><input type="button" class="num-button" value="7"></td>
@@ -42,8 +43,8 @@
         <tr>
             <td><input type="button" class="ops-button" value=""></td>
             <td><input type="button" class="num-button" value="0"></td>
-            <td><input type="button" class="ops-button" value="."></td>
-            <td><input type="button" class="ops-button" value="="></td>
+            <td><input type="button" class="ops-button" id="point" value="."></td>
+            <td><input type="button" class="ops-button" id="equals" value="="></td>
         </tr>
     </table>
     </div>
