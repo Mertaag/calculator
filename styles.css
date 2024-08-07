@@ -65,6 +65,6 @@ input[type="button"] {
     background-color: rgb(90, 87, 87);
 }
 
-.ops-button {
+.ops-button, #clear, #delete, #equals {
     background-color: rgb(26, 26, 26);
 }
