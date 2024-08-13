@@ -45,6 +45,7 @@ let currentValue = document.getElementById('current-value');
 let currentOperation = '';
 let operand1 = '';
 let operand2 = '';
+let resetOperator = false;
 
 equalsBtn.addEventListener('click', evaluate);
 clearBtn.addEventListener('click', clear);
@@ -52,8 +53,8 @@ deleteBtn.addEventListener('click', deleteInput);
 
 numbersBtn.forEach((button) =>
     button.addEventListener('click', () => {
-        if (currentValue.innerText === '0') currentValue.innerText ='';
-        currentValue.innerText += button.value
+        if (currentValue.textContent === '0') currentValue.textContent = '';
+        currentValue.textContent += button.value
     }));
 
 operationsBtn.forEach((button) =>
@@ -61,23 +62,19 @@ operationsBtn.forEach((button) =>
 
 function setOperation(operator) {
     if (currentOperation !== '') evaluate()
-    else {
-        operand1 = currentValue.textContent;
-        currentOperation = operator;
-        lastValue.textContent = `${operand1} ${currentOperation}`;
-        currentValue.textContent = '';
-        console.log(operand1, 'operand1');
-    }
+    operand1 = currentValue.textContent;
+    currentOperation = operator;
+    lastValue.textContent = `${operand1} ${currentOperation}`;
+    currentValue.textContent = '';
 }
 
 function evaluate() {
-    if (currentValue.innerText === '0' && currentOperation === '/') {
+    if (currentValue.textContent === '0' && currentOperation === '/') {
         alert('No division by 0 allowed, please try something else');
+        return
     }
     else {
         operand2 = currentValue.textContent;
-        console.log(operand2, 'operand2');
-        console.log(currentOperation);
         currentValue.textContent = operate(currentOperation, Number(operand1), Number(operand2));
         lastValue.textContent = `${operand1} ${currentOperation} ${operand2} =`;
         currentOperation = '';
@@ -93,6 +90,6 @@ function clear() {
 }
 
 function deleteInput() {
-
+    currentValue.textContent = String(currentValue.textContent).slice(0, -1);
 }
 
