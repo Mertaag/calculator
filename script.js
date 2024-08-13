@@ -31,6 +31,8 @@ function operate(operator, num1, num2) {
     }
 }
 
+console.log(operate('*', 2, 5));
+
 
 const numbersBtn = document.querySelectorAll('.num-button');
 const operationsBtn = document.querySelectorAll('.ops-button');
@@ -63,6 +65,8 @@ function setOperation(operator) {
         operand1 = currentValue.textContent;
         currentOperation = operator;
         lastValue.textContent = `${operand1} ${currentOperation}`;
+        currentValue.textContent = '';
+        console.log(operand1, 'operand1');
     }
 }
 
@@ -72,7 +76,9 @@ function evaluate() {
     }
     else {
         operand2 = currentValue.textContent;
-        currentValue.textContent = operate(currentOperation, operand1, operand2);
+        console.log(operand2, 'operand2');
+        console.log(currentOperation);
+        currentValue.textContent = operate(currentOperation, Number(operand1), Number(operand2));
         lastValue.textContent = `${operand1} ${currentOperation} ${operand2} =`;
         currentOperation = '';
     }
